@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const path = require('path'); 
 const utils = require('./utils');
 
 app.use(cors());
@@ -39,12 +40,13 @@ app.get('/get_cryto_list/:start/:perPage', async (req, res) => {
     }
 });
 
-app.get('*', (request, response) => {
-	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
-
 const port = process.env.PORT || 5000;
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
 }
+app.get('*', (request, response) => {
+    console.log(path.join(__dirname, 'client/build', 'index.html'));
+	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
 app.listen(port, () => console.log(`Listening on port ${port}`));
