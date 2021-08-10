@@ -39,6 +39,10 @@ app.get('/get_cryto_list/:start/:perPage', async (req, res) => {
     }
 });
 
+app.get('*', (request, response) => {
+	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
 const port = process.env.PORT || 5000;
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
