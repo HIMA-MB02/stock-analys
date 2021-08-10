@@ -1,0 +1,23 @@
+.nav-link {
+    color: var(--bs-dark) !important;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: 700;
+    font-size: 22px;
+}
+.navbar-brand {
+    color: var(--bs-primary) !important;
+    font-weight: 800;
+}
+.navbar {
+    padding: 20px;
+}
+.active {
+    color: var(--bs-primary) !important;
+    font-weight: 900;
+    text-shadow: 0 0 45px var(--bs-primary);
+}
+
+.menu-icon {
+    color: var(--bs-secondary);
+}

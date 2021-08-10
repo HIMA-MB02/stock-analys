@@ -1,0 +1,82 @@
+.charts-wrapper {
+    min-height: 300px;
+}
+
+.crypto-details {
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.coin-main-logo {
+    width: 50px;
+}
+
+.details-name {
+    font-weight: 800;
+    margin-bottom: 0;
+}
+
+.badge {
+    padding: 12px;
+    font-size: 14px;
+}
+
+.rounded-pill {
+    border-radius: 10px !important;
+}
+
+.chart-loader {
+    margin-top: 20%;
+}
+
+.badges {
+    flex-wrap: wrap;
+}
+
+.d-only-sm {
+    display: none;
+}
+
+.price-margins {
+    justify-content: flex-end;
+}
+.price-heading {
+    justify-content: flex-end;
+}
+.crypto-ids{
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.hide-laptop {
+    display: none !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .d-only-sm {
+        display: block;
+    }
+    .price-margins {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        justify-content: center;
+    }
+    .price-heading {
+        justify-content: center;
+    }
+    .crypto-ids{
+        justify-content: center;
+        align-items: center;
+    }
+    .mobile-price-view {
+        display: flex;
+        justify-content: center;
+    }
+    .hide-mobile {
+        display: none !important;
+    }
+    .hide-laptop {
+        display: block !important;
+    }
+}
+

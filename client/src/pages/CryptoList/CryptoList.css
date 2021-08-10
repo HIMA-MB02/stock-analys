@@ -1,0 +1,69 @@
+tr {
+    background-color: var(--bs-white);
+    line-height: 75px;
+    max-height: 75px;
+    height: 75px;
+}
+
+.table-heading {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--bs-primary);
+}
+th {
+    font-size: 18px;
+    font-weight: 500;
+    vertical-align: middle;   
+    height: 75px;
+    max-height: 75px;
+}
+td {
+    font-size: 18px;
+    font-weight: 500;
+    vertical-align: middle;
+    height: 75px;
+    max-height: 75px;
+}
+
+.rank-sort {
+    color: var(--bs-primary);
+}
+
+.rank-sort:hover {
+    background-color: var(--bs-primary);
+    color: var(--bs-white);
+}
+
+.coin-logo {
+    width: 35px;
+}
+.error-row {
+    background-color: rgba(255, 83, 83, 0.466) !important;
+}
+.error-row:hover {
+    background-color: rgba(255, 83, 83, 0.466) !important;
+}
+
+.form-check {
+    display: contents !important;
+}
+
+.form-check-input {
+    border-radius: 12px;
+}
+
+@media only screen and (max-width: 600px) {
+    th {
+        padding: 20px !important;
+        height: 100px;
+        max-height: 100px;
+    }
+    td {
+        padding: 20px !important;
+        height: 100px;
+        max-height: 100px;
+    }
+    .mobile-crypto-name {
+        min-width: 300px;
+    }
+}
