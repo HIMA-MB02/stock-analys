@@ -17,6 +17,7 @@ export const fetchCryptoListData = (start) => {
                 })
                 return;
             }
+            console.log(res);
             dispatch({
                 type: ACTION_TYPES.FETCH_CRYPTO_LIST_DATA,
                 payload: {
