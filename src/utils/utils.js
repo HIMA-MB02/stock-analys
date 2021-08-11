@@ -1,17 +1,4 @@
-const { default: axios } = require('axios');
-
-const getAPI = async (webApiUrl, options) => {
-    try {
-        const request = await axios.get(webApiUrl, {
-            ...options
-        });
-        return request;
-    } catch (e) {
-        throw e;
-    }
-};
-
-const formatData = (data) => {
+export const formatData = (data) => {
     // ChartJS Format Required
     let finalData = {
         labels: [],
@@ -34,8 +21,3 @@ const formatData = (data) => {
 
     return finalData;
   };
-
-module.exports = {
-    getAPI,
-    formatData
-};

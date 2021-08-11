@@ -1,14 +1,16 @@
-# Cryptokit.
-
-## Backend - Node + Firebase
-## Frontend - React + Redux-Thunk
+# React frontend test for Rapid Innovation/CodeZero2API
 
 
-### To install backend:
-1)  cd backend && npm install
+## Packages used
 
-### For frontend:
-1) cd backend/client && npm install
+1. react-router-dom: For routing purposes
+2. font-awesome: For icons in the app
+3. Bootstrap CDN from Bootswatch (just to boost dev time)
 
-### To run both together - full app functionality:-
-1) cd backend && npm run dev
+## To Run
+### npm i && npm start
+
+Installs the node-modules dependencies and runs the app in the development mode.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+This app was developed in 5 hours time. 

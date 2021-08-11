@@ -1,27 +1,27 @@
+import { formatData } from '../../utils/utils';
 import getAPI from '../../api/getAPI'
 import ACTION_TYPES from './actions.types'
 
-let api = 'http://localhost:5000';
+let api = 'https://api.nomics.com/v1';
 export const fetchCryptoListData = (start) => {
     const entriesLength = 20;
     return (dispatch) => {
-        getAPI(`${api}/get_cryto_list/${start}/${entriesLength}`).then(res => {
+        getAPI(`${api}/currencies/ticker?key=75e23f1b7a3f2f43339b7de9bfe8acf68bb934ae&interval=1d,30d&convert=USD&sort=rank&per-page=${entriesLength}&page=${start}`).then(res => {
             if (res.status === 500) {
                 dispatch({
                     type: ACTION_TYPES.FETCH_CRYPTO_LIST_DATA,
                     payload: {
-                        cryptoList: [],
+                        cryptoList: null,
                         isCryptoListLoading: false,
                         nextCryptoListPage: start
                     }
                 })
                 return;
             }
-            console.log(res);
             dispatch({
                 type: ACTION_TYPES.FETCH_CRYPTO_LIST_DATA,
                 payload: {
-                    cryptoList: res.data,
+                    cryptoList: res,
                     isCryptoListLoading: false,
                     nextCryptoListPage: start + 1
                 }
@@ -34,16 +34,18 @@ export const fetchCryptoListData = (start) => {
 
 export const fetchCryptoHistoricalData = (symbol, start, end) => {
     return (dispatch) => {
-        getAPI(`${api}/get_historical_data/${symbol}/${encodeURIComponent(start.toISOString())}/${encodeURIComponent(end.toISOString())}`).then(res => {
+        
+        getAPI(`${api}/exchange-rates/history?key=75e23f1b7a3f2f43339b7de9bfe8acf68bb934ae&currency=${symbol}&start=${encodeURIComponent(start.toISOString())}&end=${encodeURIComponent(end.toISOString())}`).then(res => {
+            const formattedData = formatData(res);
             dispatch({
                 type: ACTION_TYPES.FETCH_CRYPTO_HISTORICAL_DATA,
                 payload: {
                     historicalData: { symbol, data: {
-                        labels: res.data.labels,
+                        labels: formattedData.labels,
                         datasets: [
                             {
                                 label: "Price",
-                                data: res.data.data,
+                                data: formattedData.data,
                                 backgroundColor: "#277fe338",
                                 borderColor: "#2780e3",
                                 fill: true
